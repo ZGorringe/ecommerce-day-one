@@ -8,20 +8,32 @@ var Product = require('./lib/products');
 var Order = require('./lib/orders');
 
 var customerOne = new Customer({
-	name: "Susie",
-	age: "26",
-	location: "Salt Lake"
+	name: 'Susie',
+	email: 'SusieG@gmail.com',
+	shippingAddress: '123 Utah Way, Draper, UT 84020',
+	billingAddress: '123 Utah Way, Draper, UT 84020',
+	primaryPhone: '801-123-4555',
+	secondaryPhone: 'none',
+	password: 'password',
+	active: true
 });
 
 var productOne = new Product({
-	name: "Cup Supreme",
-	kind: "Kitchenware",
-	purpose: "To Drink Fluids"
+	name: 'Super Cup',
+	description: 'Drink Water From It!',
+	price: '$100',
+	active: true
 });
 
 var orderOne = new Order({
-	customer: "Susie",
-	date: "October 20, 2014"
+	customer: 'Susie',
+	billingAddress: '123 Utah Way, Draper, UT 84020',
+	shippingAddress: '123 Utah Way, Draper, UT 84020',
+	payment: 'Credit Card',
+	subtotal: '$100',
+	salesTax: '7%',
+	total: '$107',
+	products: 'Super Cup'
 });
 
 customerOne.save(function (err, customerOne) {
